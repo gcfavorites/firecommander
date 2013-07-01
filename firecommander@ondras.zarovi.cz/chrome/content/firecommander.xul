@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://firecommander/skin/firecommander.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://firecommander/locale/firecommander.dtd">
+
+<window id="firecommander" title="Fire Commander" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" width="800" height="600" persist="width height screenX screenY sizemode" onload="new FC()">
+	<script type="application/javascript" src="common.js" />
+	<script type="application/javascript" src="firecommander.js" />
+	<script type="application/javascript" src="exif.js" />
+	<script type="application/javascript" src="panel.js" />
+	<script type="application/javascript" src="panel-view.js" />
+	<script type="application/javascript" src="path/path.js" />
+	<script type="application/javascript" src="path/path-local.js" />
+	<script type="application/javascript" src="path/path-drives.js" />
+	<script type="application/javascript" src="path/path-wifi.js" />
+	<script type="application/javascript" src="path/path-sqlite.js" />
+	<script type="application/javascript" src="path/path-favorites.js" />
+	<script type="application/javascript" src="path/path-selection.js" />
+	<script type="application/javascript" src="path/path-search.js" />
+	<script type="application/javascript" src="path/path-zip.js" />
+	<script type="application/javascript" src="progress/progress.js" />
+	<script type="application/javascript" src="operation.js" />
+	<script type="application/javascript" src="viewer/viewer.js" />
+	<script type="application/javascript" src="viewer/viewer-image.js" />
+	<script type="application/javascript" src="viewer/viewer-audio.js" />
+	<script type="application/javascript" src="viewer/viewer-video.js" />
+	<script type="application/javascript" src="viewer/viewer-text.js" />
+
+	<stringbundleset>
+		<stringbundle src="chrome://firecommander/locale/firecommander.strings" />
+	</stringbundleset>
+	
+	<commandset>
+		<command id="cmd_quickrename" label="&fc.cmd.quickrename;" oncommand="1" />
+		<command id="cmd_view" label="&fc.cmd.view;" oncommand="1" />
+		<command id="cmd_edit" label="&fc.cmd.edit;" oncommand="1" />
+		<command id="cmd_copy" label="&fc.cmd.copy;" oncommand="1" />
+		<command id="cmd_move" label="&fc.cmd.move;" oncommand="1" />
+		<command id="cmd_createdirectory" label="&fc.cmd.createdirectory;" oncommand="1" />
+		<command id="cmd_delete" label="&fc.cmd.delete;" oncommand="1" />
+		<command id="cmd_createfile" label="&fc.cmd.createfile;" oncommand="1" />
+		<command id="cmd_newtab" label="&fc.cmd.newtab;" oncommand="1" />
+		<command id="cmd_closetab" label="&fc.cmd.closetab;" oncommand="1" />
+		<command id="cmd_about" label="&fc.cmd.about;" oncommand="1" />
+		<command id="cmd_search" label="&fc.cmd.search;" oncommand="1" />
+		<command id="cmd_pack" label="&fc.cmd.pack;" oncommand="1" />
+		<command id="cmd_console" label="&fc.cmd.console;" oncommand="1" />
+		<command id="cmd_activate" label="&fc.cmd.activate;" oncommand="1" />
+		
+		<command id="cmd_sort_name" label="&fc.cmd.sort.name;" oncommand="1" />
+		<command id="cmd_sort_ext" label="&fc.cmd.sort.ext;" oncommand="1" />
+		<command id="cmd_sort_size" label="&fc.cmd.sort.size;" oncommand="1" />
+		<command id="cmd_sort_ts" label="&fc.cmd.sort.ts;" oncommand="1" />
+		
+		<command id="cmd_home" label="&fc.cmd.home;" oncommand="1" />
+		<command id="cmd_up" label="&fc.cmd.up;" oncommand="1" />
+		<command id="cmd_top" label="&fc.cmd.top;" oncommand="1" />
+		<command id="cmd_drives" label="&fc.cmd.drives;" oncommand="1" />
+		<command id="cmd_wifi" label="&fc.cmd.wifi;" oncommand="1" />
+		<command id="cmd_favorites" label="&fc.cmd.favorites;" oncommand="1" />
+		<command id="cmd_exit" label="&fc.cmd.exit;" oncommand="1" />
+		<command id="cmd_options" label="&fc.cmd.options;" oncommand="1" />
+		<command id="cmd_focuspath" oncommand="1" />
+
+		<command id="cmd_activate" oncommand="1" label="xyz"/>
+	</commandset>
+
+	<keyset>
+		<key keycode="VK_F2" command="cmd_quickrename" id="key_quickrename" />
+		<key keycode="VK_F3" command="cmd_view" id="key_view" />
+		<key keycode="VK_F4" command="cmd_edit" id="key_edit" />
+		<key keycode="VK_F5" command="cmd_copy" id="key_copy" />
+		<key keycode="VK_F6" command="cmd_move" id="key_move" />
+		<key keycode="VK_F7" command="cmd_createdirectory" id="key_createdirectory" />
+		<key keycode="VK_F8" command="cmd_delete" id="key_delete" />
+		<key keycode="VK_DELETE" command="cmd_delete" />
+		<key keycode="VK_DELETE" command="cmd_delete" modifiers="shift" />
+		<key keycode="VK_F4" command="cmd_createfile" id="key_createfile" modifiers="shift" />
+		
+		<key keycode="VK_F1" command="cmd_about" id="key_about" />
+		<key key="t" command="cmd_newtab" id="key_newtab" modifiers="accel" />
+		<key key="w" command="cmd_closetab" id="key_closetab" modifiers="accel" />
+		<key key="f" command="cmd_search" id="key_search" modifiers="accel" />
+		<key keycode="VK_F7" command="cmd_search" modifiers="alt" />
+		<key keycode="VK_F5" command="cmd_pack" id="key_pack" modifiers="alt" />
+		<key key="/" command="cmd_console" id="key_console" />
+		
+		<key keycode="VK_F3" modifiers="accel" command="cmd_sort_name" id="key_sort_name" />
+		<key keycode="VK_F4" modifiers="accel" command="cmd_sort_ext" id="key_sort_ext" />
+		<key keycode="VK_F5" modifiers="accel" command="cmd_sort_ts" id="key_sort_ts" />
+		<key keycode="VK_F6" modifiers="accel" command="cmd_sort_size" id="key_sort_size" />
+		
+		<key keycode="VK_BACK" command="cmd_up" id="key_up" />
+		<key keycode="VK_BACK" command="cmd_top" id="key_top" modifiers="accel" />
+		<key key="x" command="cmd_exit" id="key_exit" modifiers="accel" />
+		<key key="h" command="cmd_home" id="key_home" modifiers="accel" />
+		<key key="l" command="cmd_focuspath" id="key_focuspath" modifiers="accel" />
+	</keyset>
+
+	<menubar>
+		<menu label="&fc.menu.file;" accesskey="&fc.menu.file.key;">
+			 <menupopup>
+				<menuitem command="cmd_quickrename" key="key_quickrename" accesskey="&fc.cmd.quickrename.key;" />
+				<menuitem command="cmd_view" key="key_view" accesskey="&fc.cmd.view.key;" />
+				<menuitem command="cmd_edit" key="key_edit" accesskey="&fc.cmd.edit.key;" />
+				<menuitem command="cmd_createfile" key="key_createfile" accesskey="&fc.cmd.createfile.key;" />
+				<menuitem command="cmd_copy" key="key_copy" accesskey="&fc.cmd.copy.key;" />
+				<menuitem command="cmd_move" key="key_move" accesskey="&fc.cmd.move.key;" />
+				<menuitem command="cmd_delete" key="key_delete" accesskey="&fc.cmd.delete.key;" />
+				<menuseparator />
+				<menuitem command="cmd_exit" key="key_exit" accesskey="&fc.cmd.exit.key;" />
+			 </menupopup>
+		</menu>
+		<menu label="&fc.menu.go;" accesskey="&fc.menu.go.key;">
+			 <menupopup>
+				<menuitem command="cmd_up" key="key_up" accesskey="&fc.cmd.up.key;" />
+				<menuitem command="cmd_top" key="key_top" accesskey="&fc.cmd.top.key;" />
+				<menuitem command="cmd_drives" accesskey="&fc.cmd.drives.key;" />
+				<menuitem command="cmd_wifi" accesskey="&fc.cmd.wifi.key;" />
+				<menuitem command="cmd_favorites" accesskey="&fc.cmd.favorites.key;" />
+				<menuitem command="cmd_home" accesskey="&fc.cmd.home.key;" />
+			 </menupopup>
+		</menu>
+		<menu label="&fc.menu.commands;" accesskey="&fc.menu.commands.key;">
+			 <menupopup>
+				<menuitem command="cmd_createdirectory" key="key_createdirectory" accesskey="&fc.cmd.createdirectory.key;" />
+				<menuitem command="cmd_newtab" key="key_newtab" accesskey="&fc.cmd.newtab.key;" />
+				<menuitem command="cmd_closetab" key="key_closetab" accesskey="&fc.cmd.closetab.key;" />
+				<menuitem command="cmd_search" key="key_search" accesskey="&fc.cmd.search.key;" />
+				<menuitem command="cmd_pack" key="key_pack" accesskey="&fc.cmd.pack.key;" />
+				<menuseparator />
+				<menuitem type="checkbox" id="menu_sort_name" command="cmd_sort_name" key="key_sort_name" accesskey="&fc.cmd.sort.name.key;" />
+				<menuitem type="checkbox" id="menu_sort_ext" command="cmd_sort_ext" key="key_sort_ext" accesskey="&fc.cmd.sort.ext.key;" />
+				<menuitem type="checkbox" id="menu_sort_size" command="cmd_sort_size" key="key_sort_size" accesskey="&fc.cmd.sort.size.key;" />
+				<menuitem type="checkbox" id="menu_sort_ts" command="cmd_sort_ts" key="key_sort_ts" accesskey="&fc.cmd.sort.ts.key;" />
+				<menuseparator />
+				<menuitem command="cmd_console" accesskey="&fc.cmd.console.key;" key="key_console" />
+				<menuitem command="cmd_options" accesskey="&fc.cmd.options.key;" />
+			 </menupopup>
+		</menu>
+		<menu label="&fc.menu.help;" accesskey="&fc.menu.help.key;">
+			 <menupopup>
+				<menuitem command="cmd_about" key="key_about" accesskey="&fc.cmd.about.key;" />
+			 </menupopup>
+		</menu>
+	</menubar>
+	
+	<menupopup id="context-menu">
+		<menuitem command="cmd_activate" default="true" />
+		<menuitem command="cmd_view" class="supports-view" />
+		<menuitem command="cmd_edit" class="supports-edit" />
+		<menuseparator />
+		<menuitem command="cmd_pack"/>
+		<menuitem command="cmd_quickrename" class="supports-rename" />
+		<menuitem command="cmd_copy" class="supports-copy" />
+		<menuitem command="cmd_move" class="supports-copy" />
+		<menuitem command="cmd_delete" class="supports-delete" />
+		<menuseparator />
+		<menuitem command="cmd_createfile" class="supports-create" />
+		<menuitem command="cmd_createdirectory" class="supports-create" />
+	</menupopup>
+
+	
+	<tree id="tree" seltype="single" flex="1" hidecolumnpicker="true" editable="true" >
+		<treecols>
+			<treecol label="&fc.tree.name;" flex="6" persist="width" />
+			<splitter class="tree-splitter"/> 
+			<treecol label="&fc.tree.data;" flex="12" persist="width" />
+			<splitter class="tree-splitter"/> 
+			<treecol class="right" label="&fc.tree.size;" flex="2" persist="width" />
+			<splitter class="tree-splitter"/>
+			<treecol class="right" label="&fc.tree.ts;" flex="3" persist="width" />
+			<splitter class="tree-splitter"/>
+			<treecol class="right" label="&fc.tree.attr;" flex="1" persist="width" />
+		</treecols>
+		<treeseparator />
+		<treechildren context="context-menu" />
+	</tree>
+	
+	<box orient="horizontal" flex="1">
+		<box orient="vertical" flex="1" persist="width" id="box_left">
+			<tabbox flex="1" id="left">
+				<tabs />
+				<tabpanels flex="1"/>
+			</tabbox>
+		</box>
+		<splitter id="splitter" />
+		<box orient="vertical" flex="1" persist="width" id="box_right">
+			<tabbox flex="1" id="right">
+				<tabs />
+				<tabpanels flex="1"/>
+			</tabbox>
+		</box>
+	</box>
+	
+	<statusbar>
+		<statusbarpanel flex="1" />
+	</statusbar>
+</window>

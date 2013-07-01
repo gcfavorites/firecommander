@@ -1,0 +1,101 @@
+<!ENTITY fc.menu.go "Go">
+<!ENTITY fc.menu.go.key "g">
+<!ENTITY fc.menu.file "File">
+<!ENTITY fc.menu.file.key "f">
+<!ENTITY fc.menu.commands "Commands">
+<!ENTITY fc.menu.commands.key "c">
+<!ENTITY fc.menu.right "Right">
+<!ENTITY fc.menu.right.key "r">
+<!ENTITY fc.menu.help "Help">
+<!ENTITY fc.menu.help.key "h">
+
+<!ENTITY fc.tree.name "Name">
+<!ENTITY fc.tree.data "Data">
+<!ENTITY fc.tree.size "Size">
+<!ENTITY fc.tree.ts "Date &amp; Time">
+<!ENTITY fc.tree.attr "Attributes">
+
+<!ENTITY fc.issue.retry "Retry">
+<!ENTITY fc.issue.overwrite "Overwrite">
+<!ENTITY fc.issue.overwrite.all "Overwrite all">
+<!ENTITY fc.issue.skip "Skip">
+<!ENTITY fc.issue.skip.all "Skip all">
+<!ENTITY fc.issue.abort "Abort">
+
+<!ENTITY fc.search.title "Search">
+<!ENTITY fc.search.basic "Basic">
+<!ENTITY fc.search.advanced "Advanced">
+<!ENTITY fc.search.term "Search for:">
+<!ENTITY fc.search.path "Search in:">
+<!ENTITY fc.search.content "Content:">
+<!ENTITY fc.search.content.re "regular expression">
+<!ENTITY fc.search.type "Type">
+<!ENTITY fc.search.type.file "File">
+<!ENTITY fc.search.type.directory "Directory">
+<!ENTITY fc.search.type.both "Both">
+<!ENTITY fc.search.size "Size">
+<!ENTITY fc.search.size.minimum "Minimum">
+<!ENTITY fc.search.size.maximum "Maximum">
+<!ENTITY fc.search.size.bytes "bytes">
+<!ENTITY fc.search.ts "Time">
+<!ENTITY fc.search.ts.from "From">
+<!ENTITY fc.search.ts.to "To">
+
+<!ENTITY fc.cmd.quickrename "Quick rename">
+<!ENTITY fc.cmd.quickrename.key "q">
+<!ENTITY fc.cmd.view "View">
+<!ENTITY fc.cmd.view.key "v">
+<!ENTITY fc.cmd.edit "Edit">
+<!ENTITY fc.cmd.edit.key "e">
+<!ENTITY fc.cmd.copy "Copy">
+<!ENTITY fc.cmd.copy.key "c">
+<!ENTITY fc.cmd.move "Move">
+<!ENTITY fc.cmd.move.key "m">
+<!ENTITY fc.cmd.delete "Delete">
+<!ENTITY fc.cmd.delete.key "d">
+<!ENTITY fc.cmd.createfile "Edit new file">
+<!ENTITY fc.cmd.createfile.key "n">
+<!ENTITY fc.cmd.exit "Exit">
+<!ENTITY fc.cmd.exit.key "x">
+
+<!ENTITY fc.cmd.up "Go to parent">
+<!ENTITY fc.cmd.up.key "p">
+<!ENTITY fc.cmd.top "Go to top">
+<!ENTITY fc.cmd.top.key "t">
+<!ENTITY fc.cmd.drives "Drive selection">
+<!ENTITY fc.cmd.drives.key "d">
+<!ENTITY fc.cmd.wifi "Wi-Fi Access points">
+<!ENTITY fc.cmd.wifi.key "w">
+<!ENTITY fc.cmd.favorites "Favorites">
+<!ENTITY fc.cmd.favorites.key "f">
+<!ENTITY fc.cmd.home "Home">
+<!ENTITY fc.cmd.home.key "h">
+
+<!ENTITY fc.cmd.newtab "New tab">
+<!ENTITY fc.cmd.newtab.key "n">
+<!ENTITY fc.cmd.closetab "Close tab">
+<!ENTITY fc.cmd.closetab.key "c">
+<!ENTITY fc.cmd.createdirectory "Create directory">
+<!ENTITY fc.cmd.createdirectory.key "d">
+<!ENTITY fc.cmd.search "Search">
+<!ENTITY fc.cmd.search.key "s">
+<!ENTITY fc.cmd.pack "Create archive">
+<!ENTITY fc.cmd.pack.key "a">
+<!ENTITY fc.cmd.console "Open console">
+<!ENTITY fc.cmd.console.key "p">
+<!ENTITY fc.cmd.options "Options">
+<!ENTITY fc.cmd.options.key "o">
+<!ENTITY fc.cmd.activate "Activate">
+
+<!ENTITY fc.cmd.sort.name "Sort by name">
+<!ENTITY fc.cmd.sort.name.key "a">
+<!ENTITY fc.cmd.sort.ext "Sort by extension">
+<!ENTITY fc.cmd.sort.ext.key "e">
+<!ENTITY fc.cmd.sort.size "Sort by size">
+<!ENTITY fc.cmd.sort.size.key "i">
+<!ENTITY fc.cmd.sort.ts "Sort by time">
+<!ENTITY fc.cmd.sort.ts.key "m">
+
+<!ENTITY fc.cmd.about "About">
+<!ENTITY fc.cmd.about.key "a">
+

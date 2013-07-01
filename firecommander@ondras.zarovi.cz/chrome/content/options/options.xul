@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://firecommander/skin/firecommander.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://firecommander/locale/options.dtd">
+
+<!-- ID needed to prevent strange warnings in -jsconsole -->
+<prefwindow title="&fc.options.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="prefwindow">
+	<script type="application/javascript" src="../common.js" />
+	<script type="application/javascript" src="options.js" />
+ 
+	<stringbundleset>
+		<stringbundle src="chrome://firecommander/locale/options.strings" />
+	</stringbundleset>
+	<prefpane id="pane_settings" label="&fc.options.settings;" image="chrome://firecommander/skin/settings.png">
+		<preferences>
+			<preference id="pref_newname" name="extensions.firecommander.newname" type="string" />
+			<preference id="pref_hidden" name="extensions.firecommander.hidden" type="bool" />
+			<preference id="pref_autosize" name="extensions.firecommander.autosize" type="bool" />
+			<preference id="pref_console" name="extensions.firecommander.console" type="string" />
+			<preference id="pref_console_args" name="extensions.firecommander.console.args" type="string" />
+		</preferences>
+		
+		<box orient="vertical">
+			<box orient="horizontal" align="center" >
+				<label control="text_newname" value="&fc.options.newname;"/>
+				<textbox preference="pref_newname" id="text_newname" flex="1"/>
+			</box>
+		
+			<groupbox>
+				<caption label="&fc.options.view;" />
+				<box orient="vertical">
+					<checkbox preference="pref_hidden" label="&fc.options.hidden;" />
+					<checkbox preference="pref_autosize" label="&fc.options.autosize;" />
+				</box>
+			</groupbox>
+
+			<groupbox>
+				<caption label="&fc.options.console;" />
+				<grid>
+					<columns>
+						<column />
+						<column flex="1" />
+					</columns>
+					<rows>
+						<row align="center">
+							<label class="right" control="text_console" value="&fc.options.console.path;" />
+							<box orient="horizontal">
+								<textbox size="40" preference="pref_console" id="text_console" />
+								<button id="browse_console" accesskey="&fc.options.browse.key;" label="&fc.options.browse;" />
+							</box>
+						</row>
+						<row align="center">
+							<label class="right" control="text_console_args" value="&fc.options.console.args;" />
+							<textbox preference="pref_console_args" id="text_console_args" />
+						</row>
+						<row>
+							<label />
+							<label value="&fc.options.console.info;" />
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</box>
+	</prefpane>
+
+	<prefpane id="pane_favorites" label="&fc.options.favorites;" image="chrome://firecommander/skin/favorites.png">
+		<preferences>
+			<preference id="pref_fav_1" name="extensions.firecommander.fav.1" type="string" />
+			<preference id="pref_fav_2" name="extensions.firecommander.fav.2" type="string" />
+			<preference id="pref_fav_3" name="extensions.firecommander.fav.3" type="string" />
+			<preference id="pref_fav_4" name="extensions.firecommander.fav.4" type="string" />
+			<preference id="pref_fav_5" name="extensions.firecommander.fav.5" type="string" />
+			<preference id="pref_fav_6" name="extensions.firecommander.fav.6" type="string" />
+			<preference id="pref_fav_7" name="extensions.firecommander.fav.7" type="string" />
+			<preference id="pref_fav_8" name="extensions.firecommander.fav.8" type="string" />
+			<preference id="pref_fav_9" name="extensions.firecommander.fav.9" type="string" />
+			<preference id="pref_fav_0" name="extensions.firecommander.fav.0" type="string" />
+		</preferences>
+		
+		<grid>
+			<columns>
+				<column />
+				<column flex="1" />
+			</columns>
+		
+			<rows>
+				<row align="center"><label value="Ctrl+1" /><textbox preference="pref_fav_1" /></row>
+				<row align="center"><label value="Ctrl+2" /><textbox preference="pref_fav_2" /></row>
+				<row align="center"><label value="Ctrl+3" /><textbox preference="pref_fav_3" /></row>
+				<row align="center"><label value="Ctrl+4" /><textbox preference="pref_fav_4" /></row>
+				<row align="center"><label value="Ctrl+5" /><textbox preference="pref_fav_5" /></row>
+				<row align="center"><label value="Ctrl+6" /><textbox preference="pref_fav_6" /></row>
+				<row align="center"><label value="Ctrl+7" /><textbox preference="pref_fav_7" /></row>
+				<row align="center"><label value="Ctrl+8" /><textbox preference="pref_fav_8" /></row>
+				<row align="center"><label value="Ctrl+9" /><textbox preference="pref_fav_9" /></row>
+				<row align="center"><label value="Ctrl+0" /><textbox preference="pref_fav_0" /></row>
+			</rows>
+		</grid>
+
+	</prefpane>
+
+	<prefpane id="pane_editors" label="&fc.options.editors;" image="chrome://firecommander/skin/editors.png">
+		<preferences>
+			<preference id="pref_editor" name="extensions.firecommander.editor" type="string"/>
+		</preferences>
+
+		<box orient="vertical">
+
+			<box orient="horizontal" align="center">
+				<label control="text_editor" value="&fc.options.editor;"/>
+				<textbox preference="pref_editor" id="text_editor" size="40"/>
+				<button id="browse_editor" accesskey="&fc.options.browse.key;" label="&fc.options.browse;" />
+			</box>
+
+			<groupbox orient="vertical">
+				<caption label="&fc.options.editors.title;" />
+				<grid>
+					<columns>
+						<column />
+						<column flex="1" />
+						<column />
+						<column />
+					</columns>
+					<rows id="editors_rows" />
+				</grid>
+				<button id="editors_add" accesskey="&fc.options.editors.add.key;" label="&fc.options.editors.add;" />
+			</groupbox>
+		</box>
+
+	</prefpane>
+</prefwindow>

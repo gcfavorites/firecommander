@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://firecommander/skin/firecommander.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://firecommander/locale/firecommander.dtd">
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" buttons="accept,cancel" title="&fc.search.title;">
+	<script type="application/javascript" src="../common.js" />
+	<script type="application/javascript" src="search.js" />
+
+	<tabbox>
+		<tabs>
+			<tab label="&fc.search.basic;" />
+			<tab label="&fc.search.advanced;" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<grid flex="1">
+					<columns>
+						<column />
+						<column flex="1"/>
+					</columns>
+					
+					<rows>
+						<row align="center">
+							<label class="right" value="&fc.search.term;" />
+							<textbox id="term" value="*" />
+						</row>
+						<row align="center">
+							<label class="right" value="&fc.search.path;" />
+							<textbox id="path" />
+						</row>
+						<row align="center">
+							<label class="right" value="&fc.search.content;" />
+							<textbox id="content" />
+						</row>
+						<row>
+							<label />
+							<label value="(&fc.search.content.re;)" />
+						</row>
+					</rows>
+				</grid>
+			</tabpanel>
+
+			<tabpanel>
+				<box orient="vertical">
+					<groupbox>
+						<caption label="&fc.search.type;" />
+						<radiogroup>
+							<radio label="&fc.search.type.file;" id="file" />
+							<radio label="&fc.search.type.directory;" id="dir" />
+							<radio label="&fc.search.type.both;" selected="true" />
+						</radiogroup>
+					</groupbox>
+					<groupbox>
+						<caption label="&fc.search.size;" />
+						<grid>
+							<columns>
+								<column />
+								<column />
+								<column />
+							</columns>
+							<rows>
+								<row align="center">
+									<checkbox id="min" label="&fc.search.size.minimum;" />
+									<textbox size="10" id="min_bytes" />
+									<label value="&fc.search.size.bytes;" />
+								</row>
+								<row align="center">
+									<checkbox id="max" label="&fc.search.size.maximum;" />
+									<textbox size="10" id="max_bytes" />
+									<label value="&fc.search.size.bytes;" />
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+					<groupbox>
+						<caption label="&fc.search.ts;" />
+						<grid>
+							<columns>
+								<column />
+								<column />
+								<column />
+							</columns>
+							<rows>
+								<row align="center">
+									<checkbox id="from" label="&fc.search.ts.from;" />
+									<datepicker id="date_from" />
+									<timepicker id="time_from" />
+								</row>
+								<row align="center">
+									<checkbox id="to" label="&fc.search.ts.to;" />
+									<datepicker id="date_to" />
+									<timepicker id="time_to" />
+								</row>
+							</rows>
+						</grid>
+					</groupbox>
+				</box>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+
+</dialog>

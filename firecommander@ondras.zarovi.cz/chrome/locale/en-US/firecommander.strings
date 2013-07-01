@@ -1,0 +1,63 @@
+delete.title=Delete
+delete.working=Deleting:
+delete.confirm=Really delete "%S" and all its contents?
+
+createdirectory.title=Create directory
+createdirectory.name=Create new directory in "%S"
+
+createfile.title=Create new file
+createfile.name=Create new file in "%S"
+
+rename.title=Quick rename
+rename.exists=Target path "%S" already exists. Overwrite?
+
+copy.title=Copy
+copy.working=Copying:
+copy.to=To:
+copy.confirm=Copy "%S" to:
+
+move.title=Move
+move.working=Moving:
+move.to=To:
+move.confirm=Move "%S" to:
+
+pack.title=Compress
+pack.confirm=Compress "%S" to:
+
+progress.total=Total:
+progress.file=File:
+
+scan.title=Preparing operation
+scan.working=Scanning:
+
+search.title=Search
+search.working=Searching:
+search.results=Search results
+
+fav.title=Setting favorite
+fav.text=Set "%S" as favorite? It will be accessible as Ctrl+%S
+
+selection.title=Selection
+selection.items=items
+selection.description=Selected %S bytes in %S files and %S directories
+selection.add=Select all files matching this pattern:
+selection.remove=Deselect all files matching this pattern:
+
+viewer-text.title=Text viewer
+viewer-text.bigfile=This file's size is %S bytes. Do you still want to open it? 
+
+error=Error
+error.badconsole=Your configured console emulator ("%S") can not be found.
+error.noeditor=There is no external editor configured.
+error.badeditor=Your configured editor ("%S") can not be found.
+error.nohandler=No suitable handler found for "%S".
+error.badpath=The path "%S" is invalid.
+error.nopath=The path "%S" does not exist.
+error.nochildren=Cannot read contents of "%S".
+error.delete=Cannot delete "%S".
+error.create=Cannot create "%S".
+error.rename=Cannot rename "%S" to "%S".
+error.ln=Cannot create symlinks due to absence of "%S".
+error.exists=Target file "%S" already exists.
+error.equalpath=Source and target paths are equal.
+error.cyclic=Cannot copy to itself.

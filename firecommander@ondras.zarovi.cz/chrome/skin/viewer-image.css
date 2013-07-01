@@ -1,0 +1,15 @@
+#viewer-image #container {
+	overflow: hidden;
+}
+
+#viewer-image #content {
+	position: relative;
+}
+
+#viewer-image #image {
+	position: absolute;
+}
+
+#viewer-image #map {
+	border: none;
+}

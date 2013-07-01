@@ -1,0 +1,45 @@
+#version {
+	font-weight: bold;
+}
+
+tree {
+	margin: 0px;
+}
+
+treecol.right, label.right {
+	text-align: right;
+}
+
+treechildren::-moz-tree-image {
+	margin-right: 2px;
+}
+
+treechildren::-moz-tree-row(selected) {
+	background-color: inherit;
+}
+
+treechildren::-moz-tree-row(current, focus) {
+	border: 1px solid black;
+	background-color: #e8e8e8;
+}
+
+treechildren::-moz-tree-cell-text(selected) {
+	color: black;
+}
+
+treechildren::-moz-tree-cell-text(marked) {
+	color: red;
+}
+
+tabpanels {
+	padding: 0px;
+}
+
+tabpanel textbox {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+tabpanel textbox[class="tree-input"] {
+	margin-left: -2px;
+}

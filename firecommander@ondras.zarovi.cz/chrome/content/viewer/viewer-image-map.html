@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Map</title>
+		<script src="http://openlayers.org/api/OpenLayers.js"></script>
+		<script>
+			function init() {
+				var r = document.location.href.match(/x=([0-9\.]+)&y=([0-9\.]+)/);
+				var lon = parseFloat(r[1]);
+				var lat = parseFloat(r[2]);
+
+				var center = new OpenLayers.LonLat(lon, lat)
+					.transform(
+						new OpenLayers.Projection("EPSG:4326"), 
+						new OpenLayers.Projection("EPSG:900913")
+					);
+
+				var map = new OpenLayers.Map({
+					div: "map",
+					layers: [new OpenLayers.Layer.OSM()],
+					controls: [
+						new OpenLayers.Control.Navigation({
+							dragPanOptions: {
+								enableKinetic: true
+							}
+						}),
+						new OpenLayers.Control.Attribution(),
+						new OpenLayers.Control.Zoom()
+					],
+					center: center,
+					zoom: 11
+				});
+				
+				var markers = new OpenLayers.Layer.Markers( "Markers" );
+				map.addLayer(markers);
+
+				var size = new OpenLayers.Size(32,32);
+				var offset = new OpenLayers.Pixel(-11, -31);
+				var icon = new OpenLayers.Icon("chrome://firecommander/skin/pin.png", size, offset);
+				markers.addMarker(new OpenLayers.Marker(center, icon));
+			}
+		</script>
+		<style type="text/css">
+			html, body {
+				margin: 0px;
+				height: 100%;
+			}
+			
+			#map {
+				height: 100%;
+			}
+
+			.olControlAttribution {
+				font-size: 9px !important;
+				bottom: 5px !important;
+				font-family: sans-serif !important;
+			}
+		</style>
+	</head>
+
+	<body onload="init()">
+		<div id="map"></div>
+	</body>
+</html>
