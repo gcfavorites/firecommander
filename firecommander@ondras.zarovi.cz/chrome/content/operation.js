@@ -444,8 +444,8 @@ Operation.Copy.prototype._newPath = function(node) {
  */
 Operation.Copy.prototype._createPath = function(newPath, directory, ts) {
 	if (!directory && newPath.exists()) { /* it is a file and it already exists */
-		if (this._issues.overwrite == "skip") { return 1; } /* silently skip */
-		if (this._issues.overwrite == "all") { return 0; } /* we do not care */
+		if (this._issues.overwrite == "skip") { return true; } /* silently skip */
+		if (this._issues.overwrite == "all") { return false; } /* we do not care */
 
 		var text = _("error.exists", newPath.getPath());
 		var title = _("error");
@@ -471,7 +471,7 @@ Operation.Copy.prototype._createPath = function(newPath, directory, ts) {
 			break;
 		}
 	}
-	
+
 	if (!directory || newPath.exists()) { return true; } /* nothing to do with file or existing directory */
 	
 	var func = function() { newPath.create(true, ts); }
@@ -598,8 +598,9 @@ Operation.Move.prototype._init = function() {
 
 Operation.Move.prototype._nodeFinished = function() {
 	/* after finishing, try to delete a node */
-	var func = function() { this._node.path.delete(); };
-	var result = this._repeatedAttempt(func, this._node.path.getPath(), "delete");
+	var path = this._node.path;
+	var func = function() { path.delete(); };
+	var result = this._repeatedAttempt(func, path.getPath(), "delete");
 	if (this._state == Operation.ABORTED) { return; }
 	
 	/* do whatever copying operation requires */
